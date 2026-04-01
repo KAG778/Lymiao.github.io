@@ -9,9 +9,11 @@ permalink: /blog/
     <div class="blog-icon">&#9998;</div>
     <h1 class="blog-title" data-i18n="blog.title">技术博客</h1>
     <div class="blog-stats">
-      <span data-i18n="blog.stats.posts">{{ site.posts.size }} 篇文章</span>
+      <span class="blog-stats-num">{{ site.posts.size }}</span>
+      <span data-i18n="blog.stats.posts">篇文章</span>
       <span>·</span>
-      <span data-i18n="blog.stats.categories">2 个分类</span>
+      <span class="blog-stats-num">{{ site.categories.size }}</span>
+      <span data-i18n="blog.stats.categories">个分类</span>
     </div>
   </div>
 
