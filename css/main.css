@@ -224,8 +224,9 @@ main {
     radial-gradient(ellipse at 80% 20%, rgba(14, 84, 132, 0.1) 0%, transparent 50%),
     linear-gradient(180deg, rgba(10, 25, 47, 0.9), rgba(17, 34, 64, 0.95)),
     url("../assets/hero-bg.png");
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
 .intro-card {
@@ -280,8 +281,8 @@ main {
 .intro-img {
   display: block;
   width: 100%;
-  height: clamp(220px, 42vw, 430px);
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   opacity: 0.85;
 }
 
