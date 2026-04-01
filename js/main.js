@@ -93,7 +93,8 @@ const translations = {
     "blog.filter.essay": "随笔",
     "blog.noPosts": "暂无文章，敬请期待！",
     "blog.readMore": "阅读全文 &rarr;",
-    "blog.backToBlog": "\u2190 返回博客列表"
+    "blog.backToBlog": "\u2190 返回博客列表",
+    "blog.toc.title": "目录"
   },
   en: {
     "meta.title": "Lymiao | Academic Homepage",
@@ -189,7 +190,8 @@ const translations = {
     "blog.filter.essay": "Essays",
     "blog.noPosts": "No posts yet. Stay tuned!",
     "blog.readMore": "Read more &rarr;",
-    "blog.backToBlog": "\u2190 Back to Blog"
+    "blog.backToBlog": "\u2190 Back to Blog",
+    "blog.toc.title": "Table of Contents"
   }
 };
 
@@ -302,3 +304,62 @@ document.querySelectorAll(".blog-filter-btn").forEach((btn) => {
 
 // Initialize language
 setLanguage(getInitialLanguage());
+
+// Blog post table of contents
+(function () {
+  const content = document.querySelector(".blog-post-content");
+  const tocList = document.querySelector(".blog-toc-list");
+  const tocNav = document.getElementById("blog-toc");
+  if (!content || !tocList || !tocNav) return;
+
+  const headings = content.querySelectorAll("h2, h3");
+  if (headings.length === 0) {
+    tocNav.style.display = "none";
+    return;
+  }
+
+  // Ensure headings have IDs
+  const usedIds = {};
+  headings.forEach((h) => {
+    let id = h.textContent
+      .trim()
+      .replace(/[^\w\u4e00-\u9fff]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .toLowerCase();
+    if (usedIds[id] !== undefined) {
+      usedIds[id]++;
+      id = id + "-" + usedIds[id];
+    } else {
+      usedIds[id] = 0;
+    }
+    h.id = id;
+  });
+
+  // Build TOC list
+  headings.forEach((h) => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = "#" + h.id;
+    a.textContent = h.textContent.trim();
+    if (h.tagName === "H3") li.classList.add("toc-h3");
+    li.appendChild(a);
+    tocList.appendChild(li);
+  });
+
+  // Highlight active heading on scroll
+  function updateActive() {
+    const scrollTop = window.scrollY + 100;
+    let current = headings[0];
+    headings.forEach((h) => {
+      if (h.offsetTop <= scrollTop) current = h;
+    });
+    tocList.querySelectorAll("a").forEach((a) => a.classList.remove("active"));
+    if (current) {
+      const active = tocList.querySelector('a[href="#' + current.id + '"]');
+      if (active) active.classList.add("active");
+    }
+  }
+
+  window.addEventListener("scroll", updateActive, { passive: true });
+  updateActive();
+})();
