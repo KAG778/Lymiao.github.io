@@ -1,0 +1,28 @@
+---
+layout: default
+nav: blog
+---
+<article class="blog-post-container">
+  <div class="container blog-post-inner">
+    <a href="{{ site.baseurl }}/blog/" class="blog-back-link" data-i18n="blog.backToBlog">&larr; 返回博客列表</a>
+
+    <header class="blog-post-header">
+      <div class="blog-post-meta">
+        <span class="blog-post-category {{ page.category }}">{{ page.category }}</span>
+        <time class="blog-post-date">{{ page.date | date: "%Y-%m-%d" }}</time>
+      </div>
+      <h1 class="blog-post-title">{{ page.title }}</h1>
+      {% if page.subtitle %}
+      <p class="blog-post-subtitle">{{ page.subtitle }}</p>
+      {% endif %}
+    </header>
+
+    <div class="blog-post-content">
+      {{ content }}
+    </div>
+
+    <footer class="blog-post-footer">
+      <a href="{{ site.baseurl }}/blog/" class="blog-back-link" data-i18n="blog.backToBlog">&larr; 返回博客列表</a>
+    </footer>
+  </div>
+</article>

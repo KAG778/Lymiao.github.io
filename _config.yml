@@ -1,0 +1,36 @@
+title: "吴彦彦 | 学术主页"
+description: "Embodied Intelligence · Multimodal Learning"
+url: "https://kag778.github.io"
+baseurl: "/Lymiao.github.io"
+lang: zh-CN
+timezone: Asia/Shanghai
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+highlighter: rouge
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "吴彦彦"
+
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

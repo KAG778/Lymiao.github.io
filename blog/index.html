@@ -1,0 +1,50 @@
+---
+layout: default
+nav: blog
+title: "博客 | 吴彦彦"
+permalink: /blog/
+---
+<div class="container blog-container">
+  <div class="blog-header">
+    <div class="blog-icon">&#9998;</div>
+    <h1 class="blog-title" data-i18n="blog.title">技术博客</h1>
+    <div class="blog-stats">
+      <span data-i18n="blog.stats.posts">{{ site.posts.size }} 篇文章</span>
+      <span>·</span>
+      <span data-i18n="blog.stats.categories">2 个分类</span>
+    </div>
+  </div>
+
+  <div class="blog-filters">
+    <button class="blog-filter-btn active" data-filter="all" data-i18n="blog.filter.all">全部</button>
+    <button class="blog-filter-btn" data-filter="技术" data-i18n="blog.filter.tech">技术</button>
+    <button class="blog-filter-btn" data-filter="随笔" data-i18n="blog.filter.essay">随笔</button>
+  </div>
+
+  <div class="blog-list">
+    {% for post in site.posts %}
+    <article class="blog-card" data-category="{{ post.category }}">
+      <a href="{{ post.url | relative_url }}" class="blog-card-link">
+        <div class="blog-card-meta">
+          <span class="blog-card-category {{ post.category }}">{{ post.category }}</span>
+          <time class="blog-card-date">{{ post.date | date: "%Y-%m-%d" }}</time>
+        </div>
+        <h2 class="blog-card-title">{{ post.title }}</h2>
+        {% if post.subtitle %}
+        <p class="blog-card-subtitle">{{ post.subtitle }}</p>
+        {% endif %}
+        {% if post.excerpt %}
+        <p class="blog-card-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+        {% endif %}
+        <span class="blog-card-read-more" data-i18n="blog.readMore">阅读全文 &rarr;</span>
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+
+  {% if site.posts.size == 0 %}
+  <div class="blog-empty">
+    <p data-i18n="blog.noPosts">暂无文章，敬请期待！</p>
+  </div>
+  {% endif %}
+</div>

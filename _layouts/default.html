@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="meta.title">{{ page.title | default: "吴彦彦 | 学术主页" }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" />
+    {% feed_meta %}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="nav-brand">
+          <a href="{{ site.baseurl }}/" class="nav-brand-link">
+            <img
+              src="{{ site.baseurl }}/assets/avatar.jpg"
+              alt="吴彦彦"
+              class="avatar-small"
+              data-i18n-alt="brand.avatarAlt"
+              onerror="this.style.display='none'"
+            />
+            <span class="site-name" data-i18n="brand.name">吴彦彦</span>
+          </a>
+        </div>
+        <nav class="top-nav" id="top-nav" aria-label="主导航" data-i18n-aria-label="nav.aria">
+          <a class="nav-link {% if page.nav == 'intro' %}active{% endif %}" href="{{ site.baseurl }}/" data-i18n="nav.intro">首页</a>
+          <a class="nav-link {% if page.nav == 'home' %}active{% endif %}" href="{{ site.baseurl }}/home/" data-i18n="nav.home">主页</a>
+          <a class="nav-link {% if page.nav == 'blog' %}active{% endif %}" href="{{ site.baseurl }}/blog/" data-i18n="nav.blog">博客</a>
+        </nav>
+        <div class="header-actions">
+          <div class="lang-switch" role="group" aria-label="语言切换" data-i18n-aria-label="lang.aria">
+            <button class="lang-btn active" type="button" data-lang-switch="zh" aria-pressed="true">中</button>
+            <button class="lang-btn" type="button" data-lang-switch="en" aria-pressed="false">EN</button>
+          </div>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="top-nav" data-i18n="menu.toggle">
+            菜单
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <script src="{{ site.baseurl }}/js/main.js"></script>
+  </body>
+</html>

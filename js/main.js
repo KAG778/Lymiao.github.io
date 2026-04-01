@@ -86,9 +86,14 @@ const translations = {
     "contact.wechatLabel": "微信：",
     "contact.githubLabel": "GitHub：",
     "blog.title": "技术博客",
-    "blog.stats.posts": "即将上线",
-    "blog.stats.words": "敬请期待",
-    "blog.comingSoon": "博客正在建设中，敬请期待！"
+    "blog.stats.posts": "篇文章",
+    "blog.stats.categories": "个分类",
+    "blog.filter.all": "全部",
+    "blog.filter.tech": "技术",
+    "blog.filter.essay": "随笔",
+    "blog.noPosts": "暂无文章，敬请期待！",
+    "blog.readMore": "阅读全文 &rarr;",
+    "blog.backToBlog": "\u2190 返回博客列表"
   },
   en: {
     "meta.title": "Yanyan Wu | Academic Homepage",
@@ -177,38 +182,19 @@ const translations = {
     "contact.wechatLabel": "WeChat: ",
     "contact.githubLabel": "GitHub: ",
     "blog.title": "Blog",
-    "blog.stats.posts": "Coming Soon",
-    "blog.stats.words": "Stay Tuned",
-    "blog.comingSoon": "Blog is under construction. Stay tuned!"
+    "blog.stats.posts": "posts",
+    "blog.stats.categories": "categories",
+    "blog.filter.all": "All",
+    "blog.filter.tech": "Tech",
+    "blog.filter.essay": "Essays",
+    "blog.noPosts": "No posts yet. Stay tuned!",
+    "blog.readMore": "Read more &rarr;",
+    "blog.backToBlog": "\u2190 Back to Blog"
   }
 };
 
 const LANGUAGE_STORAGE_KEY = "preferred-language";
 let currentLanguage = "zh";
-
-function showPage(pageName, navEl) {
-  document.querySelectorAll(".page-section").forEach((section) => {
-    section.classList.remove("active");
-  });
-
-  const page = document.getElementById(`${pageName}-page`);
-  if (page) page.classList.add("active");
-
-  document.querySelectorAll(".top-nav a").forEach((link) => {
-    link.classList.remove("active");
-  });
-  const targetNav = navEl || document.querySelector(`.top-nav a[data-page="${pageName}"]`);
-  if (targetNav) targetNav.classList.add("active");
-
-  const topNav = document.getElementById("top-nav");
-  const menuToggle = document.querySelector(".menu-toggle");
-  if (topNav && menuToggle && topNav.classList.contains("open")) {
-    topNav.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-  }
-
-  window.scrollTo(0, 0);
-}
 
 function applyTranslations(lang) {
   const dictionary = translations[lang] || translations.zh;
@@ -294,6 +280,23 @@ if (menuToggle && topNav) {
 document.querySelectorAll("[data-lang-switch]").forEach((button) => {
   button.addEventListener("click", () => {
     setLanguage(button.dataset.langSwitch);
+  });
+});
+
+// Blog category filter
+document.querySelectorAll(".blog-filter-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".blog-filter-btn").forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+    document.querySelectorAll(".blog-card").forEach((card) => {
+      if (filter === "all" || card.dataset.category === filter) {
+        card.classList.remove("hidden");
+      } else {
+        card.classList.add("hidden");
+      }
+    });
   });
 });
 
