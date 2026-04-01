@@ -318,28 +318,22 @@ setLanguage(getInitialLanguage());
     return;
   }
 
-  // Ensure headings have IDs
-  const usedIds = {};
+  // Ensure headings have IDs (use existing Kramdown ID if present)
   headings.forEach((h) => {
-    let id = h.textContent
-      .trim()
-      .replace(/[^\w\u4e00-\u9fff]+/g, "-")
-      .replace(/^-+|-+$/g, "")
-      .toLowerCase();
-    if (usedIds[id] !== undefined) {
-      usedIds[id]++;
-      id = id + "-" + usedIds[id];
-    } else {
-      usedIds[id] = 0;
+    if (!h.id) {
+      h.id = h.textContent
+        .trim()
+        .replace(/[^\w\u4e00-\u9fff]+/g, "-")
+        .replace(/^-+|-+$/g, "")
+        .toLowerCase();
     }
-    h.id = id;
   });
 
   // Build TOC list
   headings.forEach((h) => {
     const li = document.createElement("li");
     const a = document.createElement("a");
-    a.href = "#" + h.id;
+    a.href = "#" + encodeURIComponent(h.id);
     a.textContent = h.textContent.trim();
     if (h.tagName === "H3") li.classList.add("toc-h3");
     li.appendChild(a);

@@ -816,7 +816,7 @@ main {
 /* ==================== 博客文章内容 ==================== */
 .blog-post-body {
   display: grid;
-  grid-template-columns: 200px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 200px;
   gap: 32px;
 }
 
