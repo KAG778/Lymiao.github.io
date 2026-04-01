@@ -318,23 +318,44 @@ setLanguage(getInitialLanguage());
     return;
   }
 
-  // Ensure headings have IDs (use existing Kramdown ID if present)
+  // Ensure every heading has a unique ID
+  const usedIds = new Set();
   headings.forEach((h) => {
-    if (!h.id) {
-      h.id = h.textContent
-        .trim()
-        .replace(/[^\w\u4e00-\u9fff]+/g, "-")
-        .replace(/^-+|-+$/g, "")
-        .toLowerCase();
+    if (h.id && !usedIds.has(h.id)) {
+      usedIds.add(h.id);
+      return;
     }
+    // Generate a slug from heading text (works for Chinese + English)
+    let slug = h.textContent
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w\u4e00-\u9fff\-]/g, "");
+    let base = slug;
+    let counter = 1;
+    while (usedIds.has(slug)) {
+      slug = base + "-" + counter;
+      counter++;
+    }
+    h.id = slug;
+    usedIds.add(slug);
   });
 
-  // Build TOC list
+  // Build TOC list with anchor links
   headings.forEach((h) => {
     const li = document.createElement("li");
     const a = document.createElement("a");
-    a.href = "#" + encodeURIComponent(h.id);
     a.textContent = h.textContent.trim();
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.getElementById(h.id);
+      if (target) {
+        const top = target.getBoundingClientRect().top + window.scrollY - 76;
+        window.scrollTo({ top: top, behavior: "smooth" });
+        // Update URL hash without jump
+        history.pushState(null, "", "#" + h.id);
+      }
+    });
     if (h.tagName === "H3") li.classList.add("toc-h3");
     li.appendChild(a);
     tocList.appendChild(li);
@@ -344,13 +365,16 @@ setLanguage(getInitialLanguage());
   function updateActive() {
     const scrollTop = window.scrollY + 100;
     let current = headings[0];
-    headings.forEach((h) => {
-      if (h.offsetTop <= scrollTop) current = h;
-    });
+    for (let i = 0; i < headings.length; i++) {
+      if (headings[i].getBoundingClientRect().top + window.scrollY <= scrollTop) {
+        current = headings[i];
+      }
+    }
     tocList.querySelectorAll("a").forEach((a) => a.classList.remove("active"));
     if (current) {
-      const active = tocList.querySelector('a[href="#' + current.id + '"]');
-      if (active) active.classList.add("active");
+      const idx = Array.from(headings).indexOf(current);
+      const links = tocList.querySelectorAll("a");
+      if (links[idx]) links[idx].classList.add("active");
     }
   }
 
