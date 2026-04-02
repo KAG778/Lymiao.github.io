@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" />
     {% feed_meta %}
   </head>
-  <body>
+  <body class="{% if page.nav == 'intro' %}intro-page{% endif %}">
+    {% if page.nav != 'intro' %}
     <header class="site-header">
       <div class="container header-inner">
         <div class="nav-brand">
@@ -44,6 +45,7 @@
         </div>
       </div>
     </header>
+    {% endif %}
 
     <main>
       {{ content }}
