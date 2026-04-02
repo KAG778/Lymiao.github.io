@@ -305,6 +305,44 @@ document.querySelectorAll(".blog-filter-btn").forEach((btn) => {
 // Initialize language
 setLanguage(getInitialLanguage());
 
+// Intro page - 点击后替换为个人主页
+(function () {
+  const introCard = document.querySelector('.intro-card');
+  const introShell = document.querySelector('.intro-shell');
+
+  // 只在intro页面执行
+  if (!introCard || !introShell) return;
+
+  // 检查是否已经进入过主页
+  const hasEntered = sessionStorage.getItem('has-entered-homepage');
+  if (hasEntered) {
+    // 如果已经进入过，直接跳转
+    window.location.replace('/Lymiao.github.io/home/');
+    return;
+  }
+
+  introCard.addEventListener('click', function() {
+    // 淡出动画
+    introShell.style.transition = 'opacity 0.6s ease-out';
+    introShell.style.opacity = '0';
+
+    setTimeout(() => {
+      // 标记已进入
+      sessionStorage.setItem('has-entered-homepage', 'true');
+
+      // 替换当前页面（无法返回）
+      window.location.replace('/Lymiao.github.io/home/');
+    }, 600);
+  });
+
+  // ESC键也可以触发
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      introCard.click();
+    }
+  });
+})();
+
 // Blog post table of contents
 (function () {
   const content = document.querySelector(".blog-post-content");
