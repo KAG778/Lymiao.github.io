@@ -4,231 +4,190 @@ nav: home
 title: "主页 | Lymiao"
 permalink: /home/
 ---
-<!-- Hero Section -->
-<div class="waterfall-hero">
-  <div class="hero-avatar-wrapper">
-    <img
-      class="hero-avatar"
-      src="{{ site.baseurl }}/assets/avatar.jpg"
-      alt="吴彦彦头像"
-      onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22180%22 height=%22180%22%3E%3Crect width=%22180%22 height=%22180%22 fill=%22%23e5e7eb%22/%3E%3Ctext x=%2290%22 y=%2295%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22%236b7280%22 text-anchor=%22middle%22%3EPhoto%3C/text%3E%3C/svg%3E'"
-    />
-  </div>
-  <h1 class="hero-name">吴彦彦</h1>
-  <p class="hero-tagline">具身智能 · 多模态学习 · 离线强化学习</p>
-  <p class="hero-institute">华东理工大学 · 信息科学与工程学院</p>
-  <div class="hero-stats">
-    <div class="stat-item">
-      <span class="stat-value">91.15</span>
-      <span class="stat-label">GPA</span>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat-item">
-      <span class="stat-value">4/98</span>
-      <span class="stat-label">专业排名</span>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat-item">
-      <span class="stat-value">Top 5%</span>
-      <span class="stat-label">排名百分比</span>
-    </div>
-  </div>
-  <div class="hero-social">
-    <a href="mailto:23013032@mail.ecust.edu.cn" class="social-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-      Email
-    </a>
-    <a href="https://github.com/KAG778" target="_blank" rel="noreferrer" class="social-link">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-      GitHub
-    </a>
-    <a href="mailto:23013032@mail.ecust.edu.cn" class="social-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-      WeChat
-    </a>
+<!-- 简洁Hero区域 -->
+<div class="clean-hero">
+  <img
+    class="clean-avatar"
+    src="{{ site.baseurl }}/assets/avatar.jpg"
+    alt="吴彦彦"
+  />
+  <h1 class="clean-name">吴彦彦</h1>
+  <p class="clean-title">华东理工大学 · 信息工程 · GPA 91.15</p>
+  <div class="clean-tags">
+    <span class="clean-tag">具身智能</span>
+    <span class="clean-tag">多模态学习</span>
+    <span class="clean-tag">离线强化学习</span>
   </div>
 </div>
 
-<!-- Waterfall Masonry Layout -->
-<div class="waterfall-container">
-  <!-- Card: About (跨全宽) -->
-  <div class="waterfall-card waterfall-card-large">
-    <div class="card-tag">关于我</div>
-    <div class="card-content">
-      <p>
-        我目前就读于华东理工大学信息工程专业（本科），研究兴趣涵盖<strong>具身智能</strong>、<strong>多模态表征学习</strong>、<strong>离线强化学习</strong>与大语言模型应用。我在具身Agent框架开发、视觉算法与上下位机通信方面有丰富实践经验，曾在上海浩海星空机器人有限公司担任具身智能算法实习生，主导星空大脑系统的开发。
-      </p>
-    </div>
-  </div>
+<!-- 分段式布局 -->
+<div class="section-container">
 
-  <!-- Card: Education -->
-  <div class="waterfall-card">
-    <div class="card-tag">教育背景</div>
-    <div class="card-content">
-      <div class="edu-block">
-        <h3>华东理工大学</h3>
-        <p class="edu-sub">信息科学与工程学院 · 信息工程</p>
-        <p class="edu-time">2023.09 - 至今</p>
-        <div class="edu-meta">
-          <span class="meta-tag">GPA 91.15/100</span>
-          <span class="meta-tag">排名 4/98</span>
-          <span class="meta-tag">前 5%</span>
+  <!-- 教育背景 -->
+  <section class="profile-section">
+    <h2 class="section-header">
+      <span class="section-icon">🎓</span>
+      教育背景
+    </h2>
+    <div class="section-content">
+      <div class="edu-item">
+        <div class="edu-main">
+          <h3 class="edu-school">华东理工大学</h3>
+          <p class="edu-major">信息科学与工程学院 · 信息工程（本科）</p>
+          <p class="edu-period">2023.09 - 至今</p>
+        </div>
+        <div class="edu-stats">
+          <div class="edu-stat">
+            <span class="stat-num">91.15</span>
+            <span class="stat-text">GPA</span>
+          </div>
+          <div class="edu-stat">
+            <span class="stat-num">4/98</span>
+            <span class="stat-text">排名</span>
+          </div>
+          <div class="edu-stat">
+            <span class="stat-num">Top 5%</span>
+            <span class="stat-text">前5%</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- 论文与科研项目合并展示 -->
-  <!-- Card: Research 1 - ViEEG (Highlight) -->
-  <div class="waterfall-card waterfall-card-highlight">
-    <div class="card-badge">SCI一区 · 第一作者 · 在投</div>
-    <div class="card-content">
-      <h3 class="card-title">ViEEG: EEG Multi-Band Spatiotemporal Pattern Representation Learning</h3>
-      <p class="card-venue">ESWA · 2025.01 - 至今</p>
-      <p class="card-desc">针对EEG"多频带时空模式异质性"建模缺口，设计基于增强ViViT的表征学习算法。引入ECA模拟多频带情绪调制模式，设计知识残差门控增强模块与时空池化分类头，以多层次SFT进行调优。三个公开数据集上所有指标均超SOTA 1%-10%。</p>
-      <ul class="card-list" style="margin-top: 12px;">
-        <li>负责完整算法开发、除基线外所有实验与论文撰写</li>
-        <li>引入ECA模拟多频带情绪调制模式，结合多尺度卷积补足骨干ViViT网络缺乏归纳偏置的问题</li>
-        <li>设计知识残差门控增强模块与时空池化分类头，以多层次SFT进行调优</li>
-      </ul>
-      <div class="card-keywords">
-        <span class="keyword">EEG</span>
-        <span class="keyword">ViViT</span>
-        <span class="keyword">SFT</span>
-        <span class="keyword">迁移学习</span>
+  <!-- 科研成果 -->
+  <section class="profile-section">
+    <h2 class="section-header">
+      <span class="section-icon">📚</span>
+      科研成果
+    </h2>
+    <div class="research-grid">
+
+      <!-- ViEEG -->
+      <article class="research-card featured">
+        <div class="research-badge">SCI一区 · 第一作者</div>
+        <h3 class="research-title">ViEEG: Multi-Band Spatiotemporal Pattern Representation Learning</h3>
+        <p class="research-venue">ESWA · 在投 · 2025.01 - 至今</p>
+        <p class="research-brief">针对EEG多频带时空模式异质性建模缺口，设计基于增强ViViT的表征学习算法，在三个公开数据集上指标超SOTA 1%-10%。</p>
+        <div class="research-tags">
+          <span>EEG</span>
+          <span>ViViT</span>
+          <span>SFT</span>
+        </div>
+      </article>
+
+      <!-- SeMDT -->
+      <article class="research-card featured">
+        <div class="research-badge">CCF-B · 共同一作</div>
+        <h3 class="research-title">SeMDT: Self-play Decision Transformer for Sepsis Treatment</h3>
+        <p class="research-venue">EMENLP · 预投递 · 2025.10 - 至今</p>
+        <p class="research-brief">构建双Decision Transformer端到端训练架构，利用self-play协同训练解决离线RL数据分布对齐问题。</p>
+        <div class="research-tags">
+          <span>离线RL</span>
+          <span>Decision Transformer</span>
+          <span>LLM</span>
+        </div>
+      </article>
+
+      <!-- VeriPatent -->
+      <article class="research-card featured">
+        <div class="research-badge">CCF-A · 共同一作</div>
+        <h3 class="research-title">VeriPatent: Active Fingerprint Injection for LLM Protection</h3>
+        <p class="research-venue">ACMMM · 在投 · 2025.03 - 2026.03</p>
+        <p class="research-brief">设计三重训练损失项，实现主动指纹注入与检验框架，抵御多重攻击的同时防止过度声明。</p>
+        <div class="research-tags">
+          <span>LLM Fingerprint</span>
+          <span>对比学习</span>
+        </div>
+      </article>
+
+      <!-- 空间目标博弈 -->
+      <article class="research-card">
+        <div class="research-badge">EI · 已发表</div>
+        <h3 class="research-title">空间目标博弈与评估方法</h3>
+        <p class="research-venue">IRCE · 2024.06 - 2025.03</p>
+        <p class="research-brief">开发卫星自搜索Agent系统，结合YOLO实现空间目标检测与博弈评估。</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 项目经历 -->
+  <section class="profile-section">
+    <h2 class="section-header">
+      <span class="section-icon">🚀</span>
+      项目经历
+    </h2>
+    <div class="project-grid">
+
+      <article class="project-card">
+        <div class="project-badge highlight">国家级二等奖（队长）</div>
+        <h3 class="project-title">智能导盲项目</h3>
+        <p class="project-role">国家级大学生创新创业项目 · 项目负责人</p>
+        <p class="project-time">2024.06 - 2025.08</p>
+        <p class="project-desc">结合"语音-触觉-力觉"三重引导方式，开发具身Agent框架为视障人士提供语义任务服务。</p>
+        <div class="project-tags">
+          <span>具身Agent</span>
+          <span>ROS</span>
+          <span>CV算法</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3 class="project-title">具身智能算法实习生</h3>
+        <p class="project-role">上海浩海星空机器人有限公司</p>
+        <p class="project-time">2025.12 - 2026.02</p>
+        <p class="project-desc">主导"星空大脑"开发，实现单智能体具身框架，联动LLM与VLM将物理世界观察融入上层调度。</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 荣誉奖项 -->
+  <section class="profile-section">
+    <h2 class="section-header">
+      <span class="section-icon">🏆</span>
+      荣誉奖项
+    </h2>
+    <div class="awards-list">
+      <div class="award-item">
+        <span class="award-level national">国家级</span>
+        <span class="award-name">机器人和人工智能大赛 · 二等奖（队长）</span>
+      </div>
+      <div class="award-item">
+        <span class="award-level city">上海市</span>
+        <span class="award-name">数学建模国赛 · 二等奖（建模手）</span>
+      </div>
+      <div class="award-item">
+        <span class="award-level city">上海市</span>
+        <span class="award-name">机械工程创新创意大赛 · 三等奖（核心成员）</span>
+      </div>
+      <div class="award-item">
+        <span class="award-level school">校级</span>
+        <span class="award-name">一等奖学金（获评率 5%）</span>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Card: Research 2 - SeMDT -->
-  <div class="waterfall-card waterfall-card-highlight">
-    <div class="card-badge">CCF-B · 共同一作 · 预投递</div>
-    <div class="card-content">
-      <h3 class="card-title">SeMDT: Self-play Decision Transformer for Sepsis Treatment</h3>
-      <p class="card-venue">EMENLP · 2025.10 - 至今 · 香港城市大学</p>
-      <p class="card-desc">针对ICU脓毒症治疗决策中的离线RL训练难题，构建双Decision Transformer端到端训练架构，利用self-play协同训练解决数据分布对齐问题。</p>
-      <ul class="card-list" style="margin-top: 12px;">
-        <li>构建双Decision Transformer策略模型与视觉模型的端到端离线RL训练架构</li>
-        <li>利用self-play协同训练管线解决双模型预测数据分布态对齐问题，终值奖励权重衰减反向传播解决稀疏RTG奖励问题</li>
-        <li>交叉注意力与因果掩码机制实现多模态数据融合，在高危病人群体中超出医生基线性能表现</li>
-      </ul>
-      <div class="card-keywords">
-        <span class="keyword">离线RL</span>
-        <span class="keyword">Decision Transformer</span>
-        <span class="keyword">LLM</span>
+  <!-- 联系方式 -->
+  <section class="profile-section">
+    <h2 class="section-header">
+      <span class="section-icon">📬</span>
+      联系方式
+    </h2>
+    <div class="contact-grid">
+      <a href="mailto:23013032@mail.ecust.edu.cn" class="contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        <span>23013032@mail.ecust.edu.cn</span>
+      </a>
+      <a href="https://github.com/KAG778" target="_blank" class="contact-item">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        <span>github.com/KAG778</span>
+      </a>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        <span>WeChat: wyy55551234</span>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Card: Research 3 - VeriPatent -->
-  <div class="waterfall-card waterfall-card-highlight">
-    <div class="card-badge">CCF-A · 共同一作 · 在投</div>
-    <div class="card-content">
-      <h3 class="card-title">VeriPatent: Active Fingerprint Injection for Domain-Specific LLM Protection</h3>
-      <p class="card-venue">ACMMM · 2025.03 - 2026.03 · 香港城市大学</p>
-      <p class="card-desc">面向垂类LLM保护需求，设计"重建损失-对比损失-IPC分类损失"三重训练损失项，实现主动指纹注入与检验框架，抵御多重攻击的同时防止过度声明。</p>
-      <ul class="card-list" style="margin-top: 12px;">
-        <li>优化对比学习算法设计，根据"模型性能保持-指纹注入稳定性-防止过度声明"三重多目标优化需求设计训练损失项</li>
-        <li>针对多种主流攻击的鲁棒性实验均超SOTA模型，消融实验所有自创组件均带来实际性能提升</li>
-      </ul>
-      <div class="card-keywords">
-        <span class="keyword">LLM Fingerprint</span>
-        <span class="keyword">对比学习</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Card: Research 4 - 空间目标博弈 -->
-  <div class="waterfall-card">
-    <div class="card-badge">EI · 已发表</div>
-    <div class="card-content">
-      <h3 class="card-title">空间目标博弈与评估方法</h3>
-      <p class="card-venue">IRCE · 2024.06 - 2025.03 · 华东理工大学</p>
-      <ul class="card-list">
-        <li>开发卫星自搜索Agent系统（受ReAct工作启发），结合YOLO实现空间目标检测与博弈评估</li>
-        <li>负责框架优化与论文撰写，成果发表于IRCE (EI)会议</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Card: Competition - 智能导盲 -->
-  <div class="waterfall-card waterfall-card-medium">
-    <div class="card-badge">国家级二等奖（队长）</div>
-    <div class="card-content">
-      <h3 class="card-title">智能导盲项目</h3>
-      <p class="card-subtitle">国家级大学生创新创业项目 · 项目负责人</p>
-      <p class="card-time">2024.06 - 2025.08</p>
-      <ul class="card-list">
-        <li>在封闭场景下，结合"语音-触觉-力觉"三重引导方式为视障人士提供针对半开发式语义任务的服务</li>
-        <li>开发具身Agent框架，结合多元数据库建模实际现实场景</li>
-        <li>2025年中国大学生机器人和人工智能大赛<strong>国家级二等奖</strong>（队长）</li>
-      </ul>
-      <div class="card-keywords">
-        <span class="keyword">具身Agent</span>
-        <span class="keyword">ROS</span>
-        <span class="keyword">CV算法</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Card: Awards -->
-  <div class="waterfall-card">
-    <div class="card-tag">竞赛荣誉</div>
-    <div class="card-content">
-      <div class="award-grid">
-        <div class="award-item-mini">
-          <div class="award-level">国家级</div>
-          <div class="award-name">机器人和人工智能大赛</div>
-          <div class="award-rank">二等奖（队长）</div>
-        </div>
-        <div class="award-item-mini">
-          <div class="award-level">上海市</div>
-          <div class="award-name">数学建模国赛</div>
-          <div class="award-rank">二等奖（建模手）</div>
-        </div>
-        <div class="award-item-mini">
-          <div class="award-level">上海市</div>
-          <div class="award-name">机械工程创新创意大赛</div>
-          <div class="award-rank">三等奖（核心成员）</div>
-        </div>
-      </div>
-      <div class="scholarship-tag">校级一等奖学金（获评率 5%）</div>
-    </div>
-  </div>
-
-  <!-- Card: Internship -->
-  <div class="waterfall-card">
-    <div class="card-tag">实习经历</div>
-    <div class="card-content">
-      <h3 class="card-title">具身智能算法实习生</h3>
-      <p class="card-company">上海浩海星空机器人有限公司</p>
-      <p class="card-time">2025.12 - 2026.02</p>
-      <ul class="card-list">
-        <li>主导"星空大脑"的开发，实现单智能体具身框架，联动LLM与VLM将物理世界实时观察融入上层调度</li>
-        <li>构建多元知识库使机器人具备自身能力边界认知与基础场景认知，在多人交互时具备自组织规划最优执行策略的能力</li>
-        <li>构建Agent记忆系统使机器人具备在封闭场景长时间轮转执行任务的能力</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Card: Contact -->
-  <div class="waterfall-card waterfall-card-small">
-    <div class="card-tag">联系方式</div>
-    <div class="card-content">
-      <div class="contact-block">
-        <div class="contact-row">
-          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          <a href="mailto:23013032@mail.ecust.edu.cn">23013032@mail.ecust.edu.cn</a>
-        </div>
-        <div class="contact-row">
-          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-          <span>wyy55551234</span>
-        </div>
-        <div class="contact-row">
-          <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          <a href="https://github.com/KAG778" target="_blank" rel="noreferrer">KAG778</a>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
