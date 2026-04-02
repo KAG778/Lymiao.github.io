@@ -51,7 +51,7 @@ permalink: /home/
 
 <!-- Waterfall Masonry Layout -->
 <div class="waterfall-container">
-  <!-- Card: About -->
+  <!-- Card: About (跨全宽) -->
   <div class="waterfall-card waterfall-card-large">
     <div class="card-tag">关于我</div>
     <div class="card-content">
@@ -78,13 +78,19 @@ permalink: /home/
     </div>
   </div>
 
-  <!-- Card: Publication 1 -->
+  <!-- 论文与科研项目合并展示 -->
+  <!-- Card: Research 1 - ViEEG (Highlight) -->
   <div class="waterfall-card waterfall-card-highlight">
-    <div class="card-badge">SCI一区 · 第一作者</div>
+    <div class="card-badge">SCI一区 · 第一作者 · 在投</div>
     <div class="card-content">
       <h3 class="card-title">ViEEG: EEG Multi-Band Spatiotemporal Pattern Representation Learning</h3>
-      <p class="card-venue">ESWA · 在投</p>
-      <p class="card-desc">针对EEG"多频带时空模式异质性"建模缺口，设计基于增强ViViT的表征学习算法。引入ECA模拟多频带情绪调制模式，设计知识残差门控增强模块与时空池化分类头。三个公开数据集上所有指标均超SOTA 1%-10%。</p>
+      <p class="card-venue">ESWA · 2025.01 - 至今</p>
+      <p class="card-desc">针对EEG"多频带时空模式异质性"建模缺口，设计基于增强ViViT的表征学习算法。引入ECA模拟多频带情绪调制模式，设计知识残差门控增强模块与时空池化分类头，以多层次SFT进行调优。三个公开数据集上所有指标均超SOTA 1%-10%。</p>
+      <ul class="card-list" style="margin-top: 12px;">
+        <li>负责完整算法开发、除基线外所有实验与论文撰写</li>
+        <li>引入ECA模拟多频带情绪调制模式，结合多尺度卷积补足骨干ViViT网络缺乏归纳偏置的问题</li>
+        <li>设计知识残差门控增强模块与时空池化分类头，以多层次SFT进行调优</li>
+      </ul>
       <div class="card-keywords">
         <span class="keyword">EEG</span>
         <span class="keyword">ViViT</span>
@@ -94,7 +100,78 @@ permalink: /home/
     </div>
   </div>
 
-  <!-- Card: Award Stats -->
+  <!-- Card: Research 2 - SeMDT -->
+  <div class="waterfall-card waterfall-card-highlight">
+    <div class="card-badge">CCF-B · 共同一作 · 预投递</div>
+    <div class="card-content">
+      <h3 class="card-title">SeMDT: Self-play Decision Transformer for Sepsis Treatment</h3>
+      <p class="card-venue">EMENLP · 2025.10 - 至今 · 香港城市大学</p>
+      <p class="card-desc">针对ICU脓毒症治疗决策中的离线RL训练难题，构建双Decision Transformer端到端训练架构，利用self-play协同训练解决数据分布对齐问题。</p>
+      <ul class="card-list" style="margin-top: 12px;">
+        <li>构建双Decision Transformer策略模型与视觉模型的端到端离线RL训练架构</li>
+        <li>利用self-play协同训练管线解决双模型预测数据分布态对齐问题，终值奖励权重衰减反向传播解决稀疏RTG奖励问题</li>
+        <li>交叉注意力与因果掩码机制实现多模态数据融合，在高危病人群体中超出医生基线性能表现</li>
+      </ul>
+      <div class="card-keywords">
+        <span class="keyword">离线RL</span>
+        <span class="keyword">Decision Transformer</span>
+        <span class="keyword">LLM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card: Research 3 - VeriPatent -->
+  <div class="waterfall-card waterfall-card-highlight">
+    <div class="card-badge">CCF-A · 共同一作 · 在投</div>
+    <div class="card-content">
+      <h3 class="card-title">VeriPatent: Active Fingerprint Injection for Domain-Specific LLM Protection</h3>
+      <p class="card-venue">ACMMM · 2025.03 - 2026.03 · 香港城市大学</p>
+      <p class="card-desc">面向垂类LLM保护需求，设计"重建损失-对比损失-IPC分类损失"三重训练损失项，实现主动指纹注入与检验框架，抵御多重攻击的同时防止过度声明。</p>
+      <ul class="card-list" style="margin-top: 12px;">
+        <li>优化对比学习算法设计，根据"模型性能保持-指纹注入稳定性-防止过度声明"三重多目标优化需求设计训练损失项</li>
+        <li>针对多种主流攻击的鲁棒性实验均超SOTA模型，消融实验所有自创组件均带来实际性能提升</li>
+      </ul>
+      <div class="card-keywords">
+        <span class="keyword">LLM Fingerprint</span>
+        <span class="keyword">对比学习</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card: Research 4 - 空间目标博弈 -->
+  <div class="waterfall-card">
+    <div class="card-badge">EI · 已发表</div>
+    <div class="card-content">
+      <h3 class="card-title">空间目标博弈与评估方法</h3>
+      <p class="card-venue">IRCE · 2024.06 - 2025.03 · 华东理工大学</p>
+      <ul class="card-list">
+        <li>开发卫星自搜索Agent系统（受ReAct工作启发），结合YOLO实现空间目标检测与博弈评估</li>
+        <li>负责框架优化与论文撰写，成果发表于IRCE (EI)会议</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Card: Competition - 智能导盲 -->
+  <div class="waterfall-card waterfall-card-medium">
+    <div class="card-badge">国家级二等奖（队长）</div>
+    <div class="card-content">
+      <h3 class="card-title">智能导盲项目</h3>
+      <p class="card-subtitle">国家级大学生创新创业项目 · 项目负责人</p>
+      <p class="card-time">2024.06 - 2025.08</p>
+      <ul class="card-list">
+        <li>在封闭场景下，结合"语音-触觉-力觉"三重引导方式为视障人士提供针对半开发式语义任务的服务</li>
+        <li>开发具身Agent框架，结合多元数据库建模实际现实场景</li>
+        <li>2025年中国大学生机器人和人工智能大赛<strong>国家级二等奖</strong>（队长）</li>
+      </ul>
+      <div class="card-keywords">
+        <span class="keyword">具身Agent</span>
+        <span class="keyword">ROS</span>
+        <span class="keyword">CV算法</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card: Awards -->
   <div class="waterfall-card">
     <div class="card-tag">竞赛荣誉</div>
     <div class="card-content">
@@ -119,69 +196,6 @@ permalink: /home/
     </div>
   </div>
 
-  <!-- Card: Publication 2 -->
-  <div class="waterfall-card">
-    <div class="card-badge">CCF-B · 共同一作</div>
-    <div class="card-content">
-      <h3 class="card-title">SeMDT: Self-play Decision Transformer for Sepsis Treatment</h3>
-      <p class="card-venue">EMENLP · 预投递</p>
-      <p class="card-desc">针对ICU脓毒症治疗决策中的离线RL训练难题，构建双Decision Transformer端到端训练架构，利用self-play协同训练解决数据分布对齐问题。</p>
-      <div class="card-keywords">
-        <span class="keyword">离线RL</span>
-        <span class="keyword">Decision Transformer</span>
-        <span class="keyword">LLM</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Card: Research 1 -->
-  <div class="waterfall-card waterfall-card-medium">
-    <div class="card-tag">科研经历</div>
-    <div class="card-content">
-      <h3 class="card-title">ViEEG — EEG多频带时空表征学习</h3>
-      <p class="card-time">2025.01 - 至今 · 华东理工大学</p>
-      <ul class="card-list">
-        <li>负责完整算法开发、除基线外所有实验与论文撰写</li>
-        <li>引入ECA模拟多频带情绪调制模式，结合多尺度卷积补足骨干ViViT网络缺乏归纳偏置的问题</li>
-        <li>设计知识残差门控增强模块与时空池化分类头，以多层次SFT进行调优</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Card: Publication 3 -->
-  <div class="waterfall-card">
-    <div class="card-badge">CCF-A · 共同一作</div>
-    <div class="card-content">
-      <h3 class="card-title">VeriPatent: Active Fingerprint Injection for Domain-Specific LLM Protection</h3>
-      <p class="card-venue">ACMMM · 在投</p>
-      <p class="card-desc">设计"重建损失-对比损失-IPC分类损失"三重训练损失项，实现主动指纹注入与检验框架，抵御多重攻击的同时防止过度声明。</p>
-      <div class="card-keywords">
-        <span class="keyword">LLM Fingerprint</span>
-        <span class="keyword">对比学习</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Card: Competition -->
-  <div class="waterfall-card waterfall-card-medium">
-    <div class="card-tag">竞赛与项目</div>
-    <div class="card-content">
-      <h3 class="card-title">智能导盲项目</h3>
-      <p class="card-subtitle">国家级大学生创新创业项目 · 项目负责人</p>
-      <p class="card-time">2024.06 - 2025.08</p>
-      <ul class="card-list">
-        <li>结合"语音-触觉-力觉"三重引导方式为视障人士提供服务</li>
-        <li>开发具身Agent框架，结合多元数据库建模实际现实场景</li>
-        <li>获<strong>国家级二等奖</strong>（队长）</li>
-      </ul>
-      <div class="card-keywords">
-        <span class="keyword">具身Agent</span>
-        <span class="keyword">ROS</span>
-        <span class="keyword">CV算法</span>
-      </div>
-    </div>
-  </div>
-
   <!-- Card: Internship -->
   <div class="waterfall-card">
     <div class="card-tag">实习经历</div>
@@ -190,47 +204,9 @@ permalink: /home/
       <p class="card-company">上海浩海星空机器人有限公司</p>
       <p class="card-time">2025.12 - 2026.02</p>
       <ul class="card-list">
-        <li>主导"星空大脑"的开发，实现单智能体具身框架</li>
-        <li>构建多元知识库使机器人具备自身能力边界认知</li>
-        <li>构建Agent记忆系统实现长时间轮转执行任务</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Card: Research 2 -->
-  <div class="waterfall-card">
-    <div class="card-content">
-      <h3 class="card-title">SeMDT — 脓毒症离线强化学习治疗</h3>
-      <p class="card-time">2025.10 - 至今 · 香港城市大学</p>
-      <ul class="card-list">
-        <li>构建双Decision Transformer端到端训练架构</li>
-        <li>Self-play协同训练解决数据分布对齐问题</li>
-        <li>交叉注意力与因果掩码实现多模态融合</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Card: Research 3 -->
-  <div class="waterfall-card">
-    <div class="card-content">
-      <h3 class="card-title">VeriPatent — 垂类LLM指纹保护</h3>
-      <p class="card-time">2025.03 - 2026.03 · 香港城市大学</p>
-      <ul class="card-list">
-        <li>优化对比学习算法设计三重训练损失项</li>
-        <li>针对多种主流攻击的鲁棒性实验均超SOTA</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Card: Research 4 -->
-  <div class="waterfall-card">
-    <div class="card-badge">EI · 已发表</div>
-    <div class="card-content">
-      <h3 class="card-title">空间目标博弈与评估方法</h3>
-      <p class="card-time">2024.06 - 2025.03 · 华东理工大学</p>
-      <ul class="card-list">
-        <li>开发卫星自搜索Agent系统（受ReAct启发）</li>
-        <li>结合YOLO实现空间目标检测与博弈评估</li>
+        <li>主导"星空大脑"的开发，实现单智能体具身框架，联动LLM与VLM将物理世界实时观察融入上层调度</li>
+        <li>构建多元知识库使机器人具备自身能力边界认知与基础场景认知，在多人交互时具备自组织规划最优执行策略的能力</li>
+        <li>构建Agent记忆系统使机器人具备在封闭场景长时间轮转执行任务的能力</li>
       </ul>
     </div>
   </div>
