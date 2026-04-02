@@ -390,24 +390,24 @@ main {
   font-weight: 700;
   color: var(--text-heading);
   margin-bottom: 12px;
+  opacity: 1;
   animation: slideUpFade 0.8s ease-out 0.2s forwards;
-  opacity: 0;
 }
 
 .clean-title {
   font-size: 1.1rem;
   color: var(--muted);
   margin-bottom: 28px;
+  opacity: 1;
   animation: slideUpFade 0.8s ease-out 0.3s forwards;
-  opacity: 0;
 }
 
 /* 技能展示区域 */
 .skills-section {
   max-width: 600px;
   margin: 0 auto 32px;
+  opacity: 1;
   animation: slideUpFade 0.8s ease-out 0.4s forwards;
-  opacity: 0;
 }
 
 .skills-category {
