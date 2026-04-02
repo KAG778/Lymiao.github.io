@@ -1,0 +1,19 @@
+---
+layout: default
+nav: intro
+title: "Lymiao | 学术主页"
+---
+<section class="intro-shell">
+  <div class="intro-card">
+    <h1 class="intro-line" data-i18n="intro.line">思想自由</h1>
+    <p class="intro-subtitle" data-i18n="intro.subtitle">Free Mind</p>
+    <div class="intro-img-wrap">
+      <img
+        class="intro-img"
+        src="{{ site.baseurl }}/assets/hero-bg.png"
+        alt="背景"
+        data-i18n-alt="intro.imageAlt"
+      />
+    </div>
+  </div>
+</section>
