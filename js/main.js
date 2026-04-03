@@ -419,3 +419,39 @@ setLanguage(getInitialLanguage());
   window.addEventListener("scroll", updateActive, { passive: true });
   updateActive();
 })();
+
+// 主页滚动动画
+(function () {
+  // 只在主页执行
+  if (!document.querySelector('.clean-hero')) return;
+
+  const sections = document.querySelectorAll('.profile-section');
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -100px 0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+
+  // 初始检查 - 如果页面加载时已经在视口中
+  setTimeout(() => {
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        section.classList.add('visible');
+      }
+    });
+  }, 100);
+})();
