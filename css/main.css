@@ -1540,6 +1540,159 @@ main {
   gap: 12px;
 }
 
+/* ==================== 标签云 ==================== */
+.tag-cloud-section {
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+  animation: slideUpFade 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.tag-cloud-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tag-cloud-icon {
+  font-size: 1.5rem;
+  margin-right: 8px;
+}
+
+.tag-cloud-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  display: flex;
+  align-items: center;
+}
+
+.tag-cloud-reset {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-sans);
+}
+
+.tag-cloud-reset:hover {
+  background: rgba(217, 195, 165, 0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tag-cloud-reset svg {
+  width: 16px;
+  height: 16px;
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  min-height: 60px;
+}
+
+.tag-cloud-tag {
+  position: relative;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, rgba(217, 195, 165, 0.08) 0%, rgba(217, 195, 165, 0.03) 100%);
+  border: 1px solid rgba(217, 195, 165, 0.2);
+  border-radius: 999px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.tag-cloud-tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.tag-cloud-tag:hover::before {
+  left: 100%;
+}
+
+.tag-cloud-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(217, 195, 165, 0.25);
+  border-color: rgba(217, 195, 165, 0.4);
+}
+
+.tag-cloud-tag.active {
+  background: linear-gradient(135deg, var(--accent) 0%, rgba(217, 195, 165, 0.7) 100%);
+  color: var(--bg);
+  border-color: var(--accent);
+  box-shadow: 0 4px 16px rgba(217, 195, 165, 0.35);
+}
+
+.tag-cloud-tag.active .tag-count {
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--bg);
+}
+
+.tag-count {
+  display: inline-block;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: rgba(217, 195, 165, 0.15);
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 6px;
+  line-height: 20px;
+  color: var(--accent);
+}
+
+/* 标签大小分级 */
+.tag-size-small {
+  font-size: 0.85rem;
+}
+
+.tag-size-medium {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.tag-size-large {
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 10px 20px;
+}
+
+.tag-cloud-status {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 16px;
+  min-height: 24px;
+  font-family: var(--font-mono);
+}
+
 /* ==================== 博客分类过滤 ==================== */
 .blog-filters {
   display: flex;
@@ -1664,6 +1817,33 @@ main {
 
 .blog-card-link:hover .blog-card-read-more {
   color: var(--link-hover);
+}
+
+/* 博客卡片标签 */
+.blog-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.blog-card-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(217, 195, 165, 0.08);
+  border: 1px solid rgba(217, 195, 165, 0.2);
+  border-radius: 999px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.blog-card-link:hover .blog-card-tag {
+  background: rgba(217, 195, 165, 0.15);
+  border-color: rgba(217, 195, 165, 0.35);
+  transform: translateY(-1px);
 }
 
 .blog-card.hidden {

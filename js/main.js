@@ -302,6 +302,89 @@ document.querySelectorAll(".blog-filter-btn").forEach((btn) => {
   });
 });
 
+// Tag cloud filtering
+(function () {
+  const tagCloud = document.getElementById("tagCloud");
+  const resetButton = document.getElementById("resetTags");
+  const tagStatus = document.getElementById("tagStatus");
+
+  if (!tagCloud) return;
+
+  let selectedTags = new Set();
+
+  // Update tag status message
+  function updateTagStatus() {
+    if (selectedTags.size === 0) {
+      tagStatus.textContent = "";
+      resetButton.style.display = "none";
+    } else {
+      const tags = Array.from(selectedTags).join("、");
+      tagStatus.innerHTML = `已选择: <strong>${tags}</strong>`;
+      resetButton.style.display = "flex";
+    }
+  }
+
+  // Filter blog cards by selected tags
+  function filterByTags() {
+    const cards = document.querySelectorAll(".blog-card");
+
+    cards.forEach((card) => {
+      const cardTags = card.dataset.tags ? card.dataset.tags.split(",") : [];
+
+      if (selectedTags.size === 0) {
+        // No tags selected, show all cards (respect category filter)
+        const activeCategoryBtn = document.querySelector(".blog-filter-btn.active");
+        const categoryFilter = activeCategoryBtn ? activeCategoryBtn.dataset.filter : "all";
+
+        if (categoryFilter === "all" || card.dataset.category === categoryFilter) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      } else {
+        // Check if card has all selected tags
+        const hasAllTags = [...selectedTags].every((tag) => cardTags.includes(tag));
+
+        if (hasAllTags) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      }
+    });
+
+    updateTagStatus();
+  }
+
+  // Tag click handler
+  tagCloud.querySelectorAll(".tag-cloud-tag").forEach((tag) => {
+    tag.addEventListener("click", () => {
+      const tagName = tag.dataset.tag;
+
+      if (selectedTags.has(tagName)) {
+        selectedTags.delete(tagName);
+        tag.classList.remove("active");
+      } else {
+        selectedTags.add(tagName);
+        tag.classList.add("active");
+      }
+
+      filterByTags();
+    });
+  });
+
+  // Reset button handler
+  if (resetButton) {
+    resetButton.addEventListener("click", () => {
+      selectedTags.clear();
+      tagCloud.querySelectorAll(".tag-cloud-tag").forEach((tag) => {
+        tag.classList.remove("active");
+      });
+      filterByTags();
+    });
+  }
+})();
+
 // Initialize language
 setLanguage(getInitialLanguage());
 
