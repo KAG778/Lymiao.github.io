@@ -424,6 +424,17 @@ main {
   }
 }
 
+.clean-motto {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  margin: 16px 0 12px;
+  opacity: 0;
+  animation: slideUpFade 0.8s ease-out 0.15s forwards;
+}
+
 .clean-name {
   font-family: var(--font-serif);
   font-size: clamp(2.5rem, 6vw, 3.5rem);
