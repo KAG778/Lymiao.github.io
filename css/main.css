@@ -1544,9 +1544,9 @@ main {
 .tag-cloud-section {
   background: var(--bg-section);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 32px;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
   animation: slideUpFade 0.6s ease-out 0.2s forwards;
   opacity: 0;
 }
@@ -1554,36 +1554,17 @@ main {
 .tag-cloud-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.tag-cloud-icon {
-  font-size: 1.5rem;
-  margin-right: 8px;
-}
-
-.tag-cloud-title {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text-heading);
-  display: flex;
-  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 12px;
 }
 
 .tag-cloud-reset {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
+  padding: 4px 12px;
   background: transparent;
   border: 1px solid var(--border);
   border-radius: 6px;
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: var(--font-sans);
@@ -1593,11 +1574,6 @@ main {
   background: rgba(217, 195, 165, 0.1);
   border-color: var(--accent);
   color: var(--accent);
-}
-
-.tag-cloud-reset svg {
-  width: 16px;
-  height: 16px;
 }
 
 .tag-cloud {
