@@ -4,15 +4,12 @@ const translations = {
     "brand.name": "Lymiao",
     "brand.avatarAlt": "Lymiao",
     "nav.aria": "主导航",
-    "nav.intro": "首页",
     "nav.home": "主页",
+    "nav.about": "关于",
+    "nav.life": "生活",
     "nav.blog": "博客",
     "lang.aria": "语言切换",
     "menu.toggle": "菜单",
-    "intro.line": "思想自由",
-    "intro.subtitle": "Free Mind",
-    "intro.desc": "华东理工大学 · 信息工程 · GPA 91.15 · 专业排名 4/98",
-    "intro.imageAlt": "AI与机器人背景",
     "sidebar.aria": "个人信息",
     "profile.name": "Lymiao",
     "profile.avatarAlt": "Lymiao头像",
@@ -101,15 +98,12 @@ const translations = {
     "brand.name": "Lymiao",
     "brand.avatarAlt": "Lymiao",
     "nav.aria": "Main navigation",
-    "nav.intro": "Home",
     "nav.home": "Profile",
+    "nav.about": "About",
+    "nav.life": "Life",
     "nav.blog": "Blog",
     "lang.aria": "Language switch",
     "menu.toggle": "Menu",
-    "intro.line": "思想自由",
-    "intro.subtitle": "Free Mind",
-    "intro.desc": "ECUST · Information Engineering · GPA 91.15 · Rank 4/98",
-    "intro.imageAlt": "AI and Robotics background",
     "sidebar.aria": "Personal information",
     "profile.name": "Lymiao",
     "profile.avatarAlt": "Lymiao头像",
@@ -387,44 +381,6 @@ document.querySelectorAll(".blog-filter-btn").forEach((btn) => {
 
 // Initialize language
 setLanguage(getInitialLanguage());
-
-// Intro page - 点击后替换为个人主页
-(function () {
-  const introCard = document.querySelector('.intro-card');
-  const introShell = document.querySelector('.intro-shell');
-
-  // 只在intro页面执行
-  if (!introCard || !introShell) return;
-
-  // 检查是否已经进入过主页
-  const hasEntered = sessionStorage.getItem('has-entered-homepage');
-  if (hasEntered) {
-    // 如果已经进入过，直接跳转
-    window.location.replace('/Lymiao.github.io/home/');
-    return;
-  }
-
-  introCard.addEventListener('click', function() {
-    // 淡出动画
-    introShell.style.transition = 'opacity 0.6s ease-out';
-    introShell.style.opacity = '0';
-
-    setTimeout(() => {
-      // 标记已进入
-      sessionStorage.setItem('has-entered-homepage', 'true');
-
-      // 替换当前页面（无法返回）
-      window.location.replace('/Lymiao.github.io/home/');
-    }, 600);
-  });
-
-  // ESC键也可以触发
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      introCard.click();
-    }
-  });
-})();
 
 // Blog post table of contents
 (function () {

@@ -83,11 +83,6 @@ a:hover {
   -webkit-backdrop-filter: blur(16px);
 }
 
-/* Intro页面隐藏导航栏 */
-body.intro-page .site-header {
-  display: none;
-}
-
 .header-inner {
   display: flex;
   align-items: center;
@@ -234,139 +229,11 @@ main {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ==================== 首屏 Landing ==================== */
-.intro-shell {
-  min-height: calc(100vh - 64px);
-  display: grid;
-  place-items: center;
-  padding: 32px 0 56px;
-  background:
-    radial-gradient(ellipse at 30% 40%, rgba(217, 195, 165, 0.03) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 60%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
-    linear-gradient(180deg, #0a0a0a, #0f0f0f);
-  transition: opacity 0.6s ease-out;
-}
-
-.intro-card {
-  width: min(900px, calc(100% - 40px));
-  text-align: center;
-  padding: 60px 32px 40px;
-  background: rgba(20, 20, 20, 0.4);
-  border: 1px solid var(--border);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  opacity: 0;
-  animation: introFadeIn 1s ease-out 0.3s forwards;
-  cursor: pointer;
-}
-
-@keyframes introFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.intro-card:hover {
-  border-color: rgba(217, 195, 165, 0.3);
-  box-shadow: 0 8px 32px rgba(217, 195, 165, 0.1);
-  transform: translateY(-4px);
-}
-
-.intro-line {
-  font-family: var(--font-serif);
-  color: var(--text-heading);
-  font-size: clamp(2.8rem, 7vw, 5rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  margin-bottom: 12px;
-  opacity: 1;
-}
-
-.intro-subtitle {
-  font-family: var(--font-mono);
-  color: var(--accent);
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-  opacity: 1;
-}
-
-.intro-img-wrap {
-  margin-top: 32px;
-  border-radius: 2px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  opacity: 0;
-  animation: fadeIn 1s ease-out 0.9s forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.intro-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  opacity: 0.9;
-  filter: grayscale(20%) contrast(1.1);
-}
-
-/* CTA按钮样式 */
-.intro-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 32px;
-  padding: 14px 32px;
-  background: transparent;
-  border: 1px solid var(--accent);
-  border-radius: 999px;
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  opacity: 0;
-  animation: slideUpFade 0.8s ease-out 1.1s forwards;
-}
-
-.intro-card:hover .intro-cta {
-  background: var(--accent);
-  color: var(--bg);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(217, 195, 165, 0.3);
-}
-
-.cta-arrow {
-  width: 20px;
-  height: 20px;
-  transition: transform 0.3s ease;
-}
-
-.intro-card:hover .cta-arrow {
-  transform: translateX(4px);
-}
-
 /* ==================== 主页布局 ==================== */
 /* 简洁Hero区域 */
 .clean-hero {
   text-align: center;
-  padding: 80px 20px 0px;
+  padding: 88px 20px 28px;
   max-width: 800px;
   margin: 0 auto;
   position: relative;
@@ -420,14 +287,14 @@ main {
 }
 
 .clean-avatar {
-  width: 220px;
-  height: 220px;
+  width: 190px;
+  height: 190px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid var(--accent);
-  box-shadow: 0 8px 32px rgba(217, 195, 165, 0.25), 0 0 0 0 rgba(217, 195, 165, 0.4);
+  border: 3px solid rgba(217, 195, 165, 0.84);
+  box-shadow: 0 12px 42px rgba(0, 0, 0, 0.72), 0 0 0 1px rgba(217, 195, 165, 0.18);
   margin-bottom: 28px;
-  animation: fadeIn 1s ease-out, avatarGlow 2s ease-in-out infinite;
+  animation: fadeIn 1s ease-out;
   transition: transform 0.3s ease;
 }
 
@@ -446,11 +313,11 @@ main {
 
 .clean-motto {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.28rem;
   font-weight: 600;
   color: var(--accent);
-  letter-spacing: 0.2em;
-  margin: 20px 0 16px;
+  letter-spacing: 0.06em;
+  margin: 18px 0 14px;
   opacity: 0;
   animation: slideUpFade 0.8s ease-out 0.15s forwards;
   text-shadow: 0 2px 8px rgba(217, 195, 165, 0.3);
@@ -458,7 +325,7 @@ main {
 
 .clean-name {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-size: clamp(2.4rem, 6vw, 3.35rem);
   font-weight: 700;
   color: var(--text-heading);
   margin-bottom: 16px;
@@ -468,6 +335,16 @@ main {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.clean-thesis {
+  max-width: 680px;
+  margin: -2px auto 22px;
+  color: rgba(240, 240, 240, 0.82);
+  font-size: 1rem;
+  line-height: 1.85;
+  opacity: 0;
+  animation: slideUpFade 0.8s ease-out 0.32s forwards;
 }
 
 .clean-title {
@@ -562,17 +439,18 @@ main {
 
 /* 分段容器 */
 .section-container {
-  max-width: 1100px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 16px 24px 100px;
+  padding: 10px 24px 100px;
 }
 
 /* Section通用样式 */
 .profile-section {
-  margin-bottom: 48px;
+  margin-bottom: 68px;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease-out;
+  scroll-margin-top: 92px;
 }
 
 .profile-section.visible {
@@ -585,22 +463,22 @@ main {
   font-size: 2rem;
   font-weight: 700;
   color: var(--text-heading);
-  margin-bottom: 32px;
+  margin-bottom: 26px;
   display: flex;
   align-items: center;
   gap: 12px;
   padding-bottom: 16px;
-  border-bottom: 2px solid var(--border);
+  border-bottom: 1px solid var(--border);
   position: relative;
 }
 
 .section-header::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -1px;
   left: 0;
   width: 60px;
-  height: 2px;
+  height: 1px;
   background: var(--accent);
   transition: width 0.3s ease;
 }
@@ -615,6 +493,66 @@ main {
 
 .section-content {
   padding-left: 48px;
+}
+
+/* 关于我 */
+.about-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.about-section .section-content {
+  padding-left: 0;
+}
+
+.about-panel {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.25fr);
+  gap: 42px;
+  align-items: start;
+  padding: 30px 0 34px;
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+  position: relative;
+}
+
+.about-panel::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  bottom: 34px;
+  left: calc(44% - 21px);
+  width: 1px;
+  background: linear-gradient(180deg, rgba(217, 195, 165, 0.08), rgba(217, 195, 165, 0.46), rgba(217, 195, 165, 0.08));
+}
+
+.about-statement {
+  font-family: var(--font-serif);
+  color: var(--text-heading);
+  font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.45;
+  margin: 0;
+  padding: 0;
+}
+
+.about-copy {
+  display: grid;
+  gap: 16px;
+  max-width: 680px;
+  padding: 0;
+}
+
+.about-copy p {
+  color: rgba(240, 240, 240, 0.86);
+  font-size: 1rem;
+  line-height: 1.9;
 }
 
 /* 教育背景 */
@@ -690,6 +628,93 @@ main {
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+/* 研究兴趣 */
+.research-intro {
+  padding: 24px 0 28px;
+  margin-bottom: 24px;
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+  position: relative;
+}
+
+.research-intro::before {
+  display: none;
+}
+
+.research-intro-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.research-intro-text {
+  max-width: 860px;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.research-focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.research-focus-card {
+  min-height: 196px;
+  padding: 22px 0 0;
+  border-top: 1px solid var(--border-strong);
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 0;
+  border-radius: 0;
+  background: transparent;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.research-focus-card:hover {
+  border-color: rgba(217, 195, 165, 0.5);
+  background: transparent;
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
+.research-focus-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.research-focus-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
+  color: var(--text-heading);
+  margin-bottom: 12px;
+}
+
+.research-focus-card p {
+  color: rgba(240, 240, 240, 0.82);
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+.research-subheader {
+  font-family: var(--font-serif);
+  font-size: 1.28rem;
+  color: var(--text-heading);
+  margin: 8px 0 18px;
 }
 
 /* 科研网格 */
@@ -944,6 +969,117 @@ main {
   font-size: 0.95rem;
   color: var(--text);
   font-weight: 500;
+}
+
+/* 生活板块 */
+.life-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  gap: 24px;
+  align-items: stretch;
+  padding: 28px;
+  background:
+    linear-gradient(135deg, rgba(217, 195, 165, 0.08) 0%, rgba(26, 26, 26, 0.72) 50%, rgba(255, 255, 255, 0.03) 100%);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.life-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 0%, rgba(217, 195, 165, 0.06) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+.life-copy,
+.life-link-card {
+  position: relative;
+  z-index: 1;
+}
+
+.life-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.life-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--text-heading);
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+.life-desc {
+  max-width: 560px;
+  color: var(--text);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.life-link-card {
+  display: grid;
+  gap: 8px;
+  padding: 22px;
+  min-height: 160px;
+  border: 1px solid rgba(217, 195, 165, 0.24);
+  border-radius: 10px;
+  background: rgba(10, 10, 10, 0.46);
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.life-link-card:hover {
+  border-color: var(--accent);
+  background: rgba(217, 195, 165, 0.08);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.life-link-label {
+  width: fit-content;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.life-link-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.life-link-url {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent);
+  word-break: break-all;
+}
+
+.life-link-icon {
+  width: 24px;
+  height: 24px;
+  justify-self: end;
+  align-self: end;
+  color: var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.life-link-card:hover .life-link-icon {
+  transform: translate(3px, -3px);
 }
 
 /* 联系方式网格 */
@@ -2151,6 +2287,14 @@ main {
     gap: 20px;
   }
 
+  .research-focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .life-panel {
+    grid-template-columns: 1fr;
+  }
+
   .menu-toggle {
     display: inline-block;
   }
@@ -2230,10 +2374,6 @@ main {
     font-size: 1.5rem;
   }
 
-  .intro-card {
-    width: calc(100% - 32px);
-    padding: 40px 20px 24px;
-  }
 }
 
 @media (max-width: 640px) {
@@ -2286,8 +2426,19 @@ main {
     height: 160px;
   }
 
+  .clean-motto {
+    font-size: 1.08rem;
+    letter-spacing: 0.02em;
+    line-height: 1.65;
+  }
+
   .clean-name {
     font-size: 2rem;
+  }
+
+  .clean-thesis {
+    font-size: 0.92rem;
+    line-height: 1.75;
   }
 
   .clean-title {
@@ -2311,6 +2462,26 @@ main {
     padding-left: 0;
   }
 
+  .about-panel {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 24px 0 26px;
+  }
+
+  .about-panel::before {
+    display: none;
+  }
+
+  .about-statement,
+  .about-copy {
+    padding-left: 0;
+  }
+
+  .about-copy p {
+    font-size: 0.92rem;
+    line-height: 1.82;
+  }
+
   .section-header {
     font-size: 1.5rem;
     margin-bottom: 20px;
@@ -2318,6 +2489,7 @@ main {
 
   .profile-section {
     margin-bottom: 48px;
+    scroll-margin-top: 168px;
   }
 
   .edu-item {
@@ -2327,15 +2499,36 @@ main {
   }
 
   .edu-stats {
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .edu-stat {
-    padding: 12px 16px;
+    padding: 12px 8px;
   }
 
   .stat-num {
-    font-size: 1.4rem;
+    font-size: 1.12rem;
+  }
+
+  .research-intro {
+    padding: 22px;
+  }
+
+  .research-intro::before {
+    left: 22px;
+    right: 22px;
+  }
+
+  .research-intro-text {
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+
+  .research-focus-card {
+    min-height: auto;
+    padding: 20px;
   }
 
   .research-card,
@@ -2355,6 +2548,19 @@ main {
 
   .award-item {
     padding: 14px 16px;
+  }
+
+  .life-panel {
+    padding: 22px;
+  }
+
+  .life-title {
+    font-size: 1.22rem;
+  }
+
+  .life-link-card {
+    min-height: 140px;
+    padding: 18px;
   }
 
   .contact-item {
@@ -2432,10 +2638,6 @@ main {
 
   .award-item {
     text-align: center;
-  }
-
-  .intro-line {
-    font-size: 2.2rem;
   }
 
   .blog-post-title {
